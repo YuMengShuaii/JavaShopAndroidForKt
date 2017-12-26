@@ -1,0 +1,33 @@
+<layout>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.enation.javashop.android.activity.MainActivity">
+    <TextView
+        android:id="@+id/kotlin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"/>
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical"
+       >
+       <com.enation.javashop.android.widget.navigationview.FragmentPagerView
+           android:id="@+id/viewpager"
+           android:layout_width="match_parent"
+           android:layout_weight="1"
+           android:layout_height="match_parent">
+       </com.enation.javashop.android.widget.navigationview.FragmentPagerView>
+       <com.enation.javashop.android.widget.navigationview.NavigationView
+           android:background="#000000"
+           android:id="@+id/navitagion"
+           android:layout_width="match_parent"
+           android:layout_height="50dp">
+       </com.enation.javashop.android.widget.navigationview.NavigationView>
+   </LinearLayout>
+</RelativeLayout>
+</layout>

@@ -1,0 +1,83 @@
+
+buildscript {
+    /**
+     * Kotlin统一版本
+     */
+    ext.kotlin_version = '1.2.10'
+
+    /**
+     * Aop编制版本
+     */
+    ext.aspectj_version = '1.8.9'
+
+    /**
+     * 是否开启单独Module编译
+     */
+    ext.componentTag = false
+
+    /**
+     * 路由注解处理器版本
+     */
+    ext.router_version = '1.0.1'
+
+    /**
+     * kawo组件化框架版本
+     */
+    ext.kawo_version = '1.0.9'
+
+    /**
+     * 项目依赖库
+     */
+    dependencies {
+        repositories {
+            /**
+             * 依赖仓储
+             */
+            jcenter()
+            mavenCentral()
+        }
+        /**
+         * Gradle插件
+         */
+        classpath 'com.android.tools.build:gradle:2.3.3'
+
+        /**
+         * Kawo组件化插件
+         */
+        classpath "com.enation.geamtear.gradle:kawo:$kawo_version"
+
+        /**
+         * KotlinGradle插件
+         */
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        /**
+         * Kotlin辅助工具
+         */
+        classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
+        /**
+         * Aop埋点相关
+         */
+        classpath "org.aspectj:aspectjtools:$aspectj_version"
+    }
+    repositories {
+        google()
+    }
+}
+/**
+ * 统一依赖仓储
+ */
+allprojects {
+    repositories {
+        maven{
+            url 'https://dl.bintray.com/geamtear/maven'
+        }
+        jcenter()
+        mavenCentral()
+        google()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
